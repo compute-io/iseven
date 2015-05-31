@@ -30,7 +30,10 @@
   "bugs": {
     "url": "https://github.com/compute-io/iseven/issues"
   },
-  "dependencies": {},
+  "dependencies": {
+    "validate.io-array": "^1.0.5",
+    "validate.io-number": "^1.0.3"
+  },
   "devDependencies": {
     "chai": "2.x.x",
     "mocha": "2.x.x",
