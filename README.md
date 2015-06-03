@@ -17,10 +17,10 @@ For use in the browser, use [browserify](https://github.com/substack/node-browse
 ## Usage
 
 ``` javascript
-var foo = require( 'compute-iseven' );
+var isEven = require( 'compute-iseven' );
 ```
 
-#### foo( arr )
+#### iseven( x[, options] )
 
 What does this function do?
 
@@ -28,7 +28,7 @@ What does this function do?
 ## Examples
 
 ``` javascript
-var foo = require( 'compute-iseven' );
+var isEven = require( 'compute-iseven' );
 ```
 
 To run the example code from the top-level application directory,
