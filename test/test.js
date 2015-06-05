@@ -3,7 +3,7 @@
 
 // MODULES //
 
-var matrix = require( 'compute-matrix' );
+var matrix = require( 'dstructs-matrix' );
 
 var // Expectation library:
 	chai = require( 'chai' ),
@@ -141,12 +141,11 @@ describe( 'compute-iseven', function tests() {
 		var data, expected, results;
 
 		data = matrix( new Int8Array( [ 2, 4, 5, 3] ), [2,2] );
-		expected = matrix( new Int8Array( [1, 1, 0, 0] ), [2,2] );
-
 		results = isEven( data );
 
-		assert.strictEqual( results.length, expected.length );
-		assert.deepEqual( results, expected );
+		expected = '1,1;0,0';
+
+		assert.strictEqual( results.toString(), expected );
 	});
 
 	it( 'should check whether elements in array are even numbers using an accessor', function test() {
