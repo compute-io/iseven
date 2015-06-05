@@ -76,6 +76,12 @@ var out = isEven( data, {
 
 ``` javascript
 var isEven = require( 'compute-iseven' );
+
+console.log( isEven( 3 ) );
+// returns 0
+
+console.log( isEven( [ 1, 2, 3, 4] ) );
+// returns [ 0, 1, 0, 1 ]
 ```
 
 To run the example code from the top-level application directory,
