@@ -2,8 +2,7 @@ iseven
 ===
 [![NPM version][npm-image]][npm-url] [![Build Status][travis-image]][travis-url] [![Coverage Status][coveralls-image]][coveralls-url] [![Dependencies][dependencies-image]][dependencies-url]
 
->  Computes for each array element whether it is an even number.
-
+>  Computes element-wise whether a value is an even number.
 
 ## Installation
 
@@ -22,7 +21,7 @@ var isEven = require( 'compute-iseven' );
 
 #### iseven( x[, options] )
 
-Checks element-wise whether numbers in `x` are even. The function accepts as its first argument either a single `numeric` value, an `array` or a `matrix`. For input `arrays` and `matrices`, the check is carried out for each value. Correspondingly, the function returns either a single number, an `array` with length equal to that of the input `array` or a `matrix` with equal dimensions as input `x`. Each output element is either `0` or `1`. A value of `1` means that an element is an even number and `0` means that an element is __not__ an even number.
+Checks element-wise whether numbers in `x` are even. `x` may be either a [`number`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number), an [`array`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array), a [`typed array`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Typed_arrays), or a [`matrix`](https://github.com/dstructs/matrix). Correspondingly, the function returns either a single number, an `array` with length equal to that of the input `array` or a `matrix` with equal dimensions as input `x`. Each output element is either `0` or `1`. A value of `1` means that an element is an even number and `0` means that an element is __not__ an even number.
 
 ``` javascript
 var out = isEven( 9 );
@@ -70,6 +69,33 @@ var out = isEven( data, {
 	'accessor': getValue
 });
 // returns [ 0, 1, 0, 1, 0 ]
+```
+
+In the case of matrices, the function returns an indicator matrix with the same dimensions:
+
+```javascript
+var matrix = require( 'dstructs-matrix' ),
+	data,
+	mat,
+	out;
+
+data = new Float64Array( 9 );
+for ( i = 0; i < 9; i++ ) {
+	data[ i ] = i + 1;
+}
+mat = matrix( data, [3,3], 'float64' );
+/*
+	[ 1 2 3
+	  4 5 6
+	  7 8 9 ]
+*/
+
+out = isEven( mat );
+/*
+	[ 0 1 0
+	  1 0 1
+	  0 1 0 ]
+*/
 ```
 
 ## Examples
