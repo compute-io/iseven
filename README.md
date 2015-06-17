@@ -71,7 +71,7 @@ var out = isEven( data, {
 // returns [ 0, 1, 0, 1, 0 ]
 ```
 
-In the case of matrices, the function returns an indicator matrix with the same dimensions:
+In the case of matrices, the function returns an indicator matrix with the same dimensions as `x`:
 
 ```javascript
 var matrix = require( 'dstructs-matrix' ),
